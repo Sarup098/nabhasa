@@ -8,7 +8,7 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts: Cormorant Garamond for elegant Serif, Montserrat for clean Sans, Tiro Devanagari Hindi for Hindi script -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Montserrat:wght@200;300;400;500;600&family=Tiro+Devanagari+Hindi:ital@0;1&display=swap" rel="stylesheet">
@@ -62,8 +62,8 @@
         .nav-scrolled {
             background-color: rgba(253, 252, 251, 0.98);
             border-bottom: 1px solid rgba(0,0,0,0.05);
-            padding-top: 1rem;
-            padding-bottom: 1rem;
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem;
         }
 
         /* Premium Fade Animations */
@@ -137,29 +137,39 @@
             0% { transform: translateX(0); }
             100% { transform: translateX(-100%); }
         }
+        @keyframes scrollLine {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(100%); }
+        }
     </style>
 </head>
 <body class="font-sans antialiased selection:bg-sage selection:text-white">
 
     <!-- Navigation -->
-    <nav id="navbar" class="fixed w-full z-50 transition-all duration-700 pt-6 pb-6 px-6 md:px-12 flex justify-between items-center mix-blend-difference text-white">
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-700 py-4 px-4 md:px-8 lg:px-12 flex justify-between items-center text-white">
         <!-- Logo -->
-        <a href="#" class="z-50 relative flex flex-col">
-            <span class="font-serif text-2xl md:text-3xl tracking-widest uppercase font-semibold">Nabhasa.</span>
-            <span class="text-[8px] md:text-[10px] tracking-[0.3em] uppercase font-sans font-medium mt-0.5">Home & Apartment Stay</span>
+        <a href="#" class="z-50 relative flex flex-row items-center gap-2 md:gap-3 shrink-0 mr-4">
+            <div class="bg-white p-1 rounded-full shadow-sm">
+                <img src="https://raw.githubusercontent.com/Sarup098/nabhasa/main/Nabhasa_Logo.png" alt="Nabhasa Logo" class="h-8 md:h-10 w-auto object-contain transition-all duration-700 logo-img">
+            </div>
+            <div class="flex flex-col items-start drop-shadow-md pt-1">
+                 <span class="font-serif text-lg md:text-xl lg:text-2xl tracking-widest uppercase font-semibold leading-none">Nabhasa.</span>
+                 <span class="text-[7px] md:text-[8px] lg:text-[9px] tracking-[0.1em] lg:tracking-[0.2em] uppercase font-sans font-medium mt-1 text-stone-200 logo-subtext transition-colors duration-700 whitespace-nowrap">Heavenly Stays</span>
+            </div>
         </a>
 
         <!-- Desktop Links -->
-        <div class="hidden md:flex space-x-12 text-xs font-medium tracking-widest uppercase">
+        <div class="hidden md:flex md:space-x-6 lg:space-x-10 text-[10px] lg:text-xs font-medium tracking-widest uppercase drop-shadow-md shrink-0">
             <a href="#about" class="hover:opacity-60 transition-opacity duration-300">About</a>
             <a href="#accommodations" class="hover:opacity-60 transition-opacity duration-300">Stay</a>
             <a href="#amenities" class="hover:opacity-60 transition-opacity duration-300">Amenities</a>
             <a href="#gallery" class="hover:opacity-60 transition-opacity duration-300">Gallery</a>
+            <a href="#guest-photos" class="hover:opacity-60 transition-opacity duration-300">Guest Photos</a>
             <a href="#contact" class="hover:opacity-60 transition-opacity duration-300">Visit</a>
         </div>
 
         <!-- Mobile Right Side Controls -->
-        <div class="md:hidden z-50 relative flex items-center gap-4">
+        <div id="mobile-controls" class="md:hidden z-50 relative flex items-center gap-4 drop-shadow-md transition-all duration-700">
             <a href="https://wa.me/919933009711?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20booking%20a%20stay%20at%20Nabhasa%20Courtyard." target="_blank" rel="noopener noreferrer" class="text-current hover:opacity-60 transition-opacity">
                 <i class="fa-brands fa-whatsapp text-xl"></i>
             </a>
@@ -178,6 +188,7 @@
             <a href="#accommodations" class="mobile-link font-serif text-4xl hover:text-sage transition-colors">Stay</a>
             <a href="#amenities" class="mobile-link font-serif text-4xl hover:text-sage transition-colors">Amenities</a>
             <a href="#gallery" class="mobile-link font-serif text-4xl hover:text-sage transition-colors">Gallery</a>
+            <a href="#guest-photos" class="mobile-link font-serif text-4xl hover:text-sage transition-colors">Guest Photos</a>
             <a href="#contact" class="mobile-link font-serif text-4xl hover:text-sage transition-colors">Visit</a>
         </div>
     </div>
@@ -215,13 +226,6 @@
         </div>
     </header>
 
-    <style>
-        @keyframes scrollLine {
-            0% { transform: translateY(-100%); }
-            100% { transform: translateY(100%); }
-        }
-    </style>
-
     <!-- Philosophy / Intro -->
     <section id="about" class="py-24 md:py-32 px-6 md:px-12 bg-stone-50 text-stone-900 text-center">
         <div class="max-w-4xl mx-auto reveal">
@@ -230,7 +234,7 @@
                 "A refined Himalayan retreat where nature, comfort, and culture blend seamlessly. Experience Gangtok like a local — with elegance, safety, and heartfelt warmth."
             </h2>
             <p class="text-stone-600 font-light leading-relaxed max-w-2xl mx-auto text-sm md:text-base mb-12">
-                Hosted by Dr. OT and Dr. Mamta, Nabhasa Courtyard offers an elegant yet homely experience. Located near the famous Banjhakri Falls and Rumtek Monastery, our boutique homestay provides mountain-view rooms, family apartments, and an organic garden ambiance. Enjoy the rare assurance of a doctor on call in a peaceful hillside location.
+                Hosted by a <span class="font-semibold">doctor couple</span>, Nabhasa Courtyard offers an elegant yet homely experience. Located near the famous Banjhakri Falls and Rumtek Monastery, our boutique homestay provides mountain-view rooms, family apartments, and an organic garden ambiance. Enjoy the rare assurance of a doctor on call in a peaceful hillside location.
             </p>
             <div class="flex flex-col md:flex-row items-center justify-center gap-3 text-sage">
                 <div class="flex space-x-2">
@@ -280,27 +284,33 @@
                 <div class="hairline w-16 mx-auto bg-stone-900"></div>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 reveal">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 reveal">
+                <!-- Doctor on Call -->
+                <div class="bg-white p-6 rounded-sm shadow-sm text-center border border-stone-200/60 hover:-translate-y-1 transition-transform duration-300 flex flex-col justify-center items-center">
+                    <i class="fa-solid fa-user-doctor text-2xl text-sage mb-4"></i>
+                    <h4 class="font-serif text-xl mb-2">24x7 In-House<br>Doctor on Call</h4>
+                    <p class="text-stone-500 text-sm font-light">Peace of mind during your stay with immediate medical assistance available.</p>
+                </div>
                 <!-- WiFi -->
-                <div class="bg-white p-8 rounded-sm shadow-sm text-center border border-stone-200/60 hover:-translate-y-1 transition-transform duration-300">
+                <div class="bg-white p-6 rounded-sm shadow-sm text-center border border-stone-200/60 hover:-translate-y-1 transition-transform duration-300">
                     <i class="fa-solid fa-wifi text-2xl text-sage mb-4"></i>
                     <h4 class="font-serif text-xl mb-2">Free High-Speed WiFi</h4>
                     <p class="text-stone-500 text-sm font-light">Stay connected effortlessly from your room, apartment, or the garden.</p>
                 </div>
                 <!-- Parking -->
-                <div class="bg-white p-8 rounded-sm shadow-sm text-center border border-stone-200/60 hover:-translate-y-1 transition-transform duration-300">
+                <div class="bg-white p-6 rounded-sm shadow-sm text-center border border-stone-200/60 hover:-translate-y-1 transition-transform duration-300">
                     <i class="fa-solid fa-square-parking text-2xl text-sage mb-4"></i>
                     <h4 class="font-serif text-xl mb-2">Private Parking</h4>
                     <p class="text-stone-500 text-sm font-light">Safe, on-site private parking available (₹100/day) and airport shuttle services.</p>
                 </div>
                 <!-- Food/Breakfast -->
-                <div class="bg-white p-8 rounded-sm shadow-sm text-center border border-stone-200/60 hover:-translate-y-1 transition-transform duration-300">
+                <div class="bg-white p-6 rounded-sm shadow-sm text-center border border-stone-200/60 hover:-translate-y-1 transition-transform duration-300">
                     <i class="fa-solid fa-mug-saucer text-2xl text-sage mb-4"></i>
                     <h4 class="font-serif text-xl mb-2">In-Room Breakfast</h4>
                     <p class="text-stone-500 text-sm font-light">Enjoy American, Asian, or local specialities served right to your room.</p>
                 </div>
                 <!-- Leisure/Garden -->
-                <div class="bg-white p-8 rounded-sm shadow-sm text-center border border-stone-200/60 hover:-translate-y-1 transition-transform duration-300">
+                <div class="bg-white p-6 rounded-sm shadow-sm text-center border border-stone-200/60 hover:-translate-y-1 transition-transform duration-300">
                     <i class="fa-solid fa-tree text-2xl text-sage mb-4"></i>
                     <h4 class="font-serif text-xl mb-2">Garden & Fireplace</h4>
                     <p class="text-stone-500 text-sm font-light">Relax on the terrace, enjoy the organic garden, or cozy up by the outdoor fire.</p>
@@ -319,7 +329,7 @@
             </div>
         </div>
             
-        <!-- Infinite Scrolling Rail with ALL 9 Images -->
+        <!-- Infinite Scrolling Rail with ALL Images -->
         <div class="marquee-container reveal">
             <!-- Track 1 -->
             <div class="marquee-track">
@@ -385,6 +395,34 @@
         </div>
     </section>
 
+    <!-- Guest Photos Section -->
+    <section id="guest-photos" class="py-24 bg-white px-6 md:px-12">
+        <div class="max-w-7xl mx-auto reveal">
+            <div class="text-center mb-16">
+                <span class="text-sage text-xs font-semibold tracking-[0.2em] uppercase mb-4 block">Memories</span>
+                <h2 class="text-4xl font-serif text-stone-900 mb-6">Photos from Guests</h2>
+                <div class="hairline w-16 mx-auto bg-stone-900"></div>
+                <p class="mt-8 text-stone-500 font-light text-sm">We will upload photos shared by our lovely guests shortly. Check back soon!</p>
+            </div>
+            
+            <!-- Placeholder for future guest photos -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 opacity-50 grayscale pointer-events-none">
+                 <div class="aspect-square bg-stone-100 rounded-sm flex items-center justify-center border border-dashed border-stone-300">
+                     <i class="fa-solid fa-camera text-stone-300 text-3xl"></i>
+                 </div>
+                 <div class="aspect-square bg-stone-100 rounded-sm flex items-center justify-center border border-dashed border-stone-300">
+                     <i class="fa-solid fa-image text-stone-300 text-3xl"></i>
+                 </div>
+                 <div class="aspect-square bg-stone-100 rounded-sm flex items-center justify-center border border-dashed border-stone-300">
+                     <i class="fa-solid fa-camera text-stone-300 text-3xl"></i>
+                 </div>
+                 <div class="aspect-square bg-stone-100 rounded-sm flex items-center justify-center border border-dashed border-stone-300">
+                     <i class="fa-solid fa-image text-stone-300 text-3xl"></i>
+                 </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Reviews -->
     <section class="py-32 bg-stone-50 px-6 md:px-12">
         <div class="max-w-7xl mx-auto reveal">
@@ -399,7 +437,7 @@
                 <div class="bg-white p-8 rounded-sm shadow-sm border border-stone-100 relative">
                     <i class="fa-solid fa-quote-left text-2xl text-stone-200 absolute top-6 left-6"></i>
                     <p class="font-light text-stone-600 text-sm leading-relaxed mb-6 mt-6 italic relative z-10">
-                        "We had a beautiful stay at Nabasa Courtyard! Dr OT and Dr Mamta were incredibly warm and kind... The room was very spacious, spotless, and comfortable."
+                        "We had a beautiful stay at Nabasa Courtyard! The hosts were incredibly warm and kind... The room was very spacious, spotless, and comfortable."
                     </p>
                     <div class="flex items-center justify-between border-t border-stone-100 pt-4">
                         <span class="uppercase tracking-widest text-[10px] font-semibold text-stone-500">Nisarg, India</span>
@@ -446,10 +484,17 @@
             
             <!-- Brand -->
             <div class="md:col-span-4">
-                <h2 class="font-serif text-3xl text-stone-50 tracking-widest uppercase mb-1">Nabhasa.</h2>
-                <h3 class="text-[10px] font-sans tracking-[0.3em] uppercase text-sage mb-6 font-semibold">Home & Apartment Stay</h3>
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="bg-white p-1 rounded-full shadow-sm inline-block">
+                        <img src="https://raw.githubusercontent.com/Sarup098/nabhasa/main/Nabhasa_Logo.png" alt="Nabhasa Logo" class="h-10 w-auto object-contain">
+                    </div>
+                    <div>
+                        <h2 class="font-serif text-3xl text-stone-50 tracking-widest uppercase mb-1">Nabhasa.</h2>
+                        <h3 class="text-[10px] font-sans tracking-[0.3em] uppercase text-sage font-semibold">Heavenly Stays</h3>
+                    </div>
+                </div>
                 <p class="font-light text-sm leading-relaxed mb-8 max-w-sm">
-                    A boutique homestay in the hills of Gangtok offering mountain-view rooms and family apartments. Hosted by Dr. OT & Dr. Mamta.
+                    A boutique homestay in the hills of Gangtok offering mountain-view rooms and family apartments. Hosted by a doctor couple.
                 </p>
                 <div class="flex space-x-6 text-stone-50">
                     <a href="https://www.booking.com/Share-jJWR1m" target="_blank" class="hover:text-sage transition-colors border-b border-transparent hover:border-sage text-xs uppercase tracking-widest pb-1">Booking.com</a>
@@ -460,9 +505,11 @@
             <div class="md:col-span-4">
                 <h4 class="text-xs font-semibold uppercase tracking-[0.2em] text-stone-50 mb-6">Location & Contact</h4>
                 <ul class="space-y-4 font-light text-sm">
-                    <li><i class="fa-brands fa-whatsapp text-sage mr-2"></i> <a href="https://wa.me/919933009711" target="_blank" class="hover:text-white transition-colors">+91 99330 09711</a></li>
+                    <li><i class="fa-solid fa-phone text-sage mr-2 w-4"></i> <a href="tel:+917908462127" class="hover:text-white transition-colors">+91 79084 62127</a></li>
+                    <li><i class="fa-brands fa-whatsapp text-sage mr-2 w-4"></i> <a href="https://wa.me/919933009711" target="_blank" class="hover:text-white transition-colors">+91 99330 09711</a></li>
+                    <li><i class="fa-regular fa-envelope text-sage mr-2 w-4"></i> <a href="mailto:aryanavasa@gmail.com" class="hover:text-white transition-colors">aryanavasa@gmail.com</a></li>
                     <li class="flex items-start mt-4">
-                        <i class="fa-solid fa-location-dot text-sage mr-3 mt-1"></i> 
+                        <i class="fa-solid fa-location-dot text-sage mr-3 mt-1 w-4"></i> 
                         <span class="leading-relaxed">Near Banjhakri Falls (650m)<br>Adjacent to Luing Garden Restaurant<br>Gangtok, Sikkim</span>
                     </li>
                 </ul>
@@ -526,17 +573,38 @@
             
             // 1. Navbar style on scroll
             const navbar = document.getElementById('navbar');
-            const logoSubtext = navbar.querySelector('span:nth-child(2)');
+            const logoSubtext = navbar.querySelector('.logo-subtext');
+            const desktopLinks = navbar.querySelector('.hidden.md\\:flex');
+            const mobileControls = document.getElementById('mobile-controls');
+            let menuOpen = false;
             
+            const setNavbarLight = () => {
+                navbar.classList.add('text-white', 'py-4');
+                navbar.classList.remove('nav-scrolled', 'text-stone-900');
+                if(logoSubtext) {
+                    logoSubtext.classList.remove('text-sage');
+                    logoSubtext.classList.add('text-stone-200');
+                }
+                if(desktopLinks) desktopLinks.classList.add('drop-shadow-md');
+                if(mobileControls) mobileControls.classList.add('drop-shadow-md');
+            };
+
+            const setNavbarDark = () => {
+                navbar.classList.remove('text-white', 'py-4');
+                navbar.classList.add('nav-scrolled', 'text-stone-900');
+                if(logoSubtext) {
+                    logoSubtext.classList.remove('text-stone-200');
+                    logoSubtext.classList.add('text-sage');
+                }
+                if(desktopLinks) desktopLinks.classList.remove('drop-shadow-md');
+                if(mobileControls) mobileControls.classList.remove('drop-shadow-md');
+            };
+
             window.addEventListener('scroll', () => {
-                if (window.scrollY > 50) {
-                    navbar.classList.remove('mix-blend-difference', 'text-white', 'pt-6', 'pb-6');
-                    navbar.classList.add('nav-scrolled', 'text-stone-900');
-                    if(logoSubtext) logoSubtext.classList.remove('text-sage');
-                } else {
-                    navbar.classList.add('mix-blend-difference', 'text-white', 'pt-6', 'pb-6');
-                    navbar.classList.remove('nav-scrolled', 'text-stone-900');
-                    if(logoSubtext) logoSubtext.classList.add('text-sage');
+                if (window.scrollY > 50 && !menuOpen) {
+                    setNavbarDark();
+                } else if (!menuOpen) {
+                    setNavbarLight();
                 }
             });
 
@@ -544,21 +612,21 @@
             const btn = document.getElementById('mobile-menu-btn');
             const menu = document.getElementById('mobile-menu');
             const mobileLinks = document.querySelectorAll('.mobile-link');
-            let menuOpen = false;
 
             btn.addEventListener('click', () => {
                 menuOpen = !menuOpen;
                 if (menuOpen) {
                     menu.classList.remove('opacity-0', 'pointer-events-none');
                     menu.classList.add('opacity-100', 'pointer-events-auto');
-                    navbar.classList.remove('mix-blend-difference', 'text-white');
-                    navbar.classList.add('text-stone-900');
+                    setNavbarDark(); // Menu background is light, so navbar content must be dark
+                    navbar.classList.remove('nav-scrolled'); // Remove physical background of navbar
                 } else {
                     menu.classList.add('opacity-0', 'pointer-events-none');
                     menu.classList.remove('opacity-100', 'pointer-events-auto');
                     if (window.scrollY <= 50) {
-                        navbar.classList.add('mix-blend-difference', 'text-white');
-                        navbar.classList.remove('text-stone-900');
+                        setNavbarLight();
+                    } else {
+                        setNavbarDark();
                     }
                 }
             });
@@ -569,7 +637,9 @@
                     menu.classList.add('opacity-0', 'pointer-events-none');
                     menu.classList.remove('opacity-100', 'pointer-events-auto');
                     if (window.scrollY <= 50) {
-                        navbar.classList.add('mix-blend-difference', 'text-white');
+                        setNavbarLight();
+                    } else {
+                        setNavbarDark();
                     }
                 });
             });
