@@ -96,27 +96,6 @@
             opacity: 0.15;
         }
 
-        /* Hero Slideshow */
-        .slideshow-img {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0;
-            animation: crossfade 16s infinite ease-in-out;
-        }
-        .slideshow-img:nth-child(1) { animation-delay: 0s; }
-        .slideshow-img:nth-child(2) { animation-delay: 4s; }
-        .slideshow-img:nth-child(3) { animation-delay: 8s; }
-        .slideshow-img:nth-child(4) { animation-delay: 12s; }
-        
-        @keyframes crossfade {
-            0%, 100% { opacity: 0; }
-            10%, 25% { opacity: 1; }
-            35% { opacity: 0; }
-        }
-
         /* Continuous Marquee */
         .marquee-container {
             display: flex;
@@ -148,9 +127,9 @@
     <!-- Navigation -->
     <nav id="navbar" class="fixed w-full z-50 transition-all duration-700 py-4 px-4 md:px-8 lg:px-12 flex justify-between items-center text-white">
         <!-- Logo -->
-        <a href="#" class="z-50 relative flex flex-row items-center gap-2 md:gap-3 shrink-0 mr-4">
-            <div class="bg-white p-1 rounded-full shadow-sm">
-                <img src="https://raw.githubusercontent.com/Sarup098/nabhasa/main/Nabhasa_Logo.png" alt="Nabhasa Logo" class="h-8 md:h-10 w-auto object-contain transition-all duration-700 logo-img">
+        <a href="#" class="z-50 relative flex flex-row items-center gap-2 md:gap-3 shrink-0 mr-4 group">
+            <div class="bg-white p-1 rounded-full shadow-sm transition-transform group-hover:scale-105 duration-300">
+                <img src="https://raw.githubusercontent.com/Sarup098/nabhasa/main/Nabhasa_Logo.png" alt="Nabhasa Logo" class="h-8 md:h-10 w-8 md:w-10 object-contain transition-all duration-700 logo-img">
             </div>
             <div class="flex flex-col items-start drop-shadow-md pt-1">
                  <span class="font-serif text-lg md:text-xl lg:text-2xl tracking-widest uppercase font-semibold leading-none">Nabhasa.</span>
@@ -159,12 +138,12 @@
         </a>
 
         <!-- Desktop Links -->
-        <div class="hidden md:flex md:space-x-6 lg:space-x-10 text-[10px] lg:text-xs font-medium tracking-widest uppercase drop-shadow-md shrink-0">
+        <div class="hidden md:flex md:space-x-5 lg:space-x-8 text-[10px] lg:text-xs font-medium tracking-widest uppercase drop-shadow-md shrink-0">
             <a href="#about" class="hover:opacity-60 transition-opacity duration-300">About</a>
             <a href="#accommodations" class="hover:opacity-60 transition-opacity duration-300">Stay</a>
             <a href="#amenities" class="hover:opacity-60 transition-opacity duration-300">Amenities</a>
             <a href="#gallery" class="hover:opacity-60 transition-opacity duration-300">Gallery</a>
-            <a href="#guest-photos" class="hover:opacity-60 transition-opacity duration-300">Guest Photos</a>
+            <a href="#guest-photos" class="hover:opacity-60 transition-opacity duration-300">Guests</a>
             <a href="#contact" class="hover:opacity-60 transition-opacity duration-300">Visit</a>
         </div>
 
@@ -175,8 +154,8 @@
             </a>
             <!-- Mobile Menu Button -->
             <button id="mobile-menu-btn" class="focus:outline-none hover:opacity-60 transition-opacity">
-                <span class="block w-6 h-[1px] bg-current mb-1.5"></span>
-                <span class="block w-6 h-[1px] bg-current"></span>
+                <span class="block w-6 h-[1px] bg-current mb-1.5 transition-transform duration-300"></span>
+                <span class="block w-6 h-[1px] bg-current transition-transform duration-300"></span>
             </button>
         </div>
     </nav>
@@ -195,17 +174,16 @@
 
     <!-- Hero Section -->
     <header class="relative h-screen w-full flex items-center justify-center">
-        <!-- High-end subtle dark overlay with 10% opacity slideshow -->
+        <!-- High-end subtle dark overlay with increased opacity for better media visibility -->
         <div class="absolute inset-0 z-0 bg-stone-900">
-            <div class="relative w-full h-full opacity-30">
-                <img src="https://raw.githubusercontent.com/Sarup098/nabhasa/main/1.jpg" alt="Nabhasa Courtyard Property" class="slideshow-img">
-                <img src="https://raw.githubusercontent.com/Sarup098/nabhasa/main/view.jpg" alt="Nabhasa Courtyard View" class="slideshow-img">
-                <img src="https://raw.githubusercontent.com/Sarup098/nabhasa/main/garden.jpg" alt="Nabhasa Courtyard Garden" class="slideshow-img">
-                <img src="https://raw.githubusercontent.com/Sarup098/nabhasa/main/balcony.jpg" alt="Nabhasa Courtyard Balcony" class="slideshow-img">
+            <div class="relative w-full h-full opacity-60">
+                <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover">
+                    <source src="https://raw.githubusercontent.com/Sarup098/nabhasa/main/hero%20section%20.MP4" type="video/mp4">
+                </video>
             </div>
         </div>
 
-        <div class="relative z-10 text-center text-white px-4 flex flex-col items-center">
+        <div class="relative z-10 text-center text-white px-4 flex flex-col items-center drop-shadow-lg">
             <span class="uppercase tracking-[0.3em] text-xs mb-6 block font-light reveal active">Welcome to Gangtok</span>
             <h1 class="text-5xl md:text-8xl font-serif font-light tracking-wide mb-4 reveal active" style="transition-delay: 200ms;">
                 Nabhasa Courtyard
@@ -218,7 +196,7 @@
             </p>
         </div>
 
-        <div class="absolute bottom-12 left-1/2 -translate-x-1/2 z-10 text-white flex flex-col items-center reveal active" style="transition-delay: 600ms;">
+        <div class="absolute bottom-12 left-1/2 -translate-x-1/2 z-10 text-white flex flex-col items-center reveal active drop-shadow-md" style="transition-delay: 600ms;">
             <span class="text-[10px] uppercase tracking-widest -mr-[0.25em] mb-4">Scroll</span>
             <div class="w-[1px] h-12 bg-white/50 relative overflow-hidden">
                 <div class="w-full h-full bg-white absolute top-0 left-0 animate-[scrollLine_2s_ease-in-out_infinite]"></div>
@@ -234,7 +212,7 @@
                 "A refined Himalayan retreat where nature, comfort, and culture blend seamlessly. Experience Gangtok like a local — with elegance, safety, and heartfelt warmth."
             </h2>
             <p class="text-stone-600 font-light leading-relaxed max-w-2xl mx-auto text-sm md:text-base mb-12">
-                Hosted by a <span class="font-semibold">doctor couple</span>, Nabhasa Courtyard offers an elegant yet homely experience. Located near the famous Banjhakri Falls and Rumtek Monastery, our boutique homestay provides mountain-view rooms, family apartments, and an organic garden ambiance. Enjoy the rare assurance of a doctor on call in a peaceful hillside location.
+                Hosted by a <span class="font-semibold text-sage">doctor couple</span>, Nabhasa Courtyard offers an elegant yet homely experience. Located near the famous Banjhakri Falls and Rumtek Monastery, our boutique homestay provides mountain-view rooms, family apartments, and an organic garden ambiance. Enjoy the rare assurance of a doctor on call in a peaceful hillside location.
             </p>
             <div class="flex flex-col md:flex-row items-center justify-center gap-3 text-sage">
                 <div class="flex space-x-2">
@@ -252,96 +230,125 @@
     <!-- Accommodations -->
     <section id="accommodations" class="py-20 px-6 md:px-12 bg-white">
         <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col md:flex-row items-center gap-10 md:gap-24 mb-20 md:mb-32">
-                <div class="w-full md:w-1/2 reveal img-zoom-container">
-                    <img src="https://raw.githubusercontent.com/Sarup098/nabhasa/main/bed.jpg" alt="Comfortable Accommodations" class="w-full h-[300px] md:h-[500px] object-cover img-zoom rounded-sm">
-                </div>
-                <div class="w-full md:w-1/2 reveal">
-                    <span class="text-sage text-xs font-semibold tracking-[0.2em] uppercase mb-4 block">Mountain View Stays</span>
-                    <h3 class="text-4xl md:text-5xl font-serif mb-6 text-stone-900">Family Rooms & Apartments</h3>
-                    <div class="hairline w-12 mb-6"></div>
-                    <p class="text-stone-600 font-light leading-relaxed mb-6 text-base">
-                        Wake up to misty mountain mornings in our thoughtfully designed spaces. From our <strong>Triple & Family Rooms</strong> to our exclusive <strong>2 BHK Apartments</strong>, every room reflects warmth, privacy, and understated luxury.
-                    </p>
-                    <ul class="space-y-3 font-light text-stone-600 text-sm mb-8">
-                        <li class="flex items-center"><i class="fa-solid fa-check text-sage mr-3"></i> Private entrances & mountain/garden views</li>
-                        <li class="flex items-center"><i class="fa-solid fa-check text-sage mr-3"></i> En-suite private bathrooms with showers</li>
-                        <li class="flex items-center"><i class="fa-solid fa-check text-sage mr-3"></i> Spacious living & dining areas in apartments</li>
-                        <li class="flex items-center"><i class="fa-solid fa-check text-sage mr-3"></i> Sofa beds available for extra comfort</li>
-                    </ul>
-                    <a href="https://wa.me/919933009711?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20room%20availability." target="_blank" class="inline-block border-b border-stone-900 pb-1 text-sm uppercase tracking-widest hover:text-sage hover:border-sage transition-colors">Check Availability</a>
-                </div>
-            </div>
-
-            <!-- New Room Details & Pricing Section -->
+            <!-- Merged Room Details, Photos & Pricing Section -->
             <div class="reveal">
-                <div class="text-center mb-12">
-                    <h3 class="text-3xl md:text-4xl font-serif text-stone-900 mb-4">Our Spaces & Rates</h3>
-                    <div class="hairline w-12 mx-auto bg-stone-900"></div>
+                <div class="text-center mb-16">
+                    <span class="text-sage text-xs font-semibold tracking-[0.2em] uppercase mb-4 block">Mountain View Stays</span>
+                    <h3 class="text-3xl md:text-5xl font-serif text-stone-900 mb-6">Our Spaces & Rates</h3>
+                    <div class="hairline w-16 mx-auto bg-stone-900"></div>
+                    <p class="text-stone-600 font-light leading-relaxed mt-8 max-w-2xl mx-auto text-base">
+                        Wake up to misty mountain mornings in our thoughtfully designed spaces. From our Triple & Family Rooms to our exclusive 2 BHK Apartments, every room reflects warmth, privacy, and understated luxury.
+                    </p>
                 </div>
 
-                <div class="max-w-5xl mx-auto flex flex-col gap-4">
-                    <!-- Zo Nyot Apartment -->
-                    <div class="bg-stone-50 p-6 md:p-8 flex flex-col md:flex-row justify-between items-start md:items-center border border-stone-100 rounded-sm hover:shadow-md transition-shadow">
-                        <div>
-                            <h4 class="text-2xl font-serif text-stone-900">Zo Nyot Apartment <span class="text-xs font-sans text-sage tracking-widest uppercase ml-0 md:ml-3 block md:inline mt-2 md:mt-0 font-semibold">2 BHK</span></h4>
-                            <p class="text-sm text-stone-600 font-light mt-2">Spacious family living featuring elegant interiors, dining area, and maximum comfort.</p>
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                    <!-- Left Side: Merged Gallery -->
+                    <div class="lg:col-span-5 grid grid-cols-2 gap-4 lg:sticky lg:top-32">
+                        <div class="col-span-2 img-zoom-container overflow-hidden rounded-sm h-64 md:h-80 shadow-sm border border-stone-100">
+                            <img src="https://raw.githubusercontent.com/Sarup098/nabhasa/main/bed.jpg" alt="Comfortable Accommodations" class="w-full h-full object-cover img-zoom">
                         </div>
-                        <div class="text-left md:text-right mt-4 md:mt-0 shrink-0">
-                            <span class="text-2xl font-serif text-stone-900 block">₹6,800</span>
-                            <span class="text-[10px] text-stone-500 uppercase tracking-widest">Per Night</span>
+                        <div class="col-span-1 img-zoom-container overflow-hidden rounded-sm h-40 md:h-48 shadow-sm border border-stone-100">
+                            <img src="https://raw.githubusercontent.com/Sarup098/nabhasa/main/balcony.jpg" alt="Balcony View" class="w-full h-full object-cover img-zoom">
                         </div>
-                    </div>
-
-                    <!-- Yuksum -->
-                    <div class="bg-stone-50 p-6 md:p-8 flex flex-col md:flex-row justify-between items-start md:items-center border border-stone-100 rounded-sm hover:shadow-md transition-shadow">
-                        <div>
-                            <h4 class="text-2xl font-serif text-stone-900">Yuksum <span class="text-xs font-sans text-sage tracking-widest uppercase ml-0 md:ml-3 block md:inline mt-2 md:mt-0 font-semibold">4-Bedded Room</span></h4>
-                            <p class="text-sm text-stone-600 font-light mt-2">Front-facing mountain view featuring a private balcony.</p>
-                        </div>
-                        <div class="text-left md:text-right mt-4 md:mt-0 shrink-0">
-                            <span class="text-2xl font-serif text-stone-900 block">₹4,500</span>
-                            <span class="text-[10px] text-stone-500 uppercase tracking-widest">Per Night</span>
+                        <div class="col-span-1 img-zoom-container overflow-hidden rounded-sm h-40 md:h-48 shadow-sm border border-stone-100">
+                            <img src="https://raw.githubusercontent.com/Sarup098/nabhasa/main/view.jpg" alt="Mountain View" class="w-full h-full object-cover img-zoom">
                         </div>
                     </div>
 
-                    <!-- Dzongri -->
-                    <div class="bg-stone-50 p-6 md:p-8 flex flex-col md:flex-row justify-between items-start md:items-center border border-stone-100 rounded-sm hover:shadow-md transition-shadow">
-                        <div>
-                            <h4 class="text-2xl font-serif text-stone-900">Dzongri <span class="text-xs font-sans text-sage tracking-widest uppercase ml-0 md:ml-3 block md:inline mt-2 md:mt-0 font-semibold">3-Bedded Room</span></h4>
-                            <p class="text-sm text-stone-600 font-light mt-2">Beautiful front-facing room offering direct mountain views.</p>
+                    <!-- Right Side: Rooms & Rates -->
+                    <div class="lg:col-span-7 flex flex-col gap-4">
+                        <!-- Zo Nyot Apartment -->
+                        <div class="bg-stone-50 p-6 md:p-8 flex flex-col md:flex-row justify-between items-start md:items-center border border-stone-100 rounded-sm hover:shadow-md transition-all duration-300 hover:border-sage/30">
+                            <div>
+                                <h4 class="text-2xl font-serif text-stone-900">Zo Nyot Apartment <span class="text-xs font-sans text-sage tracking-widest uppercase ml-0 md:ml-3 block md:inline mt-2 md:mt-0 font-semibold bg-sage/10 px-2 py-1 rounded-sm">2 BHK</span></h4>
+                                <p class="text-sm text-stone-600 font-light mt-2 leading-relaxed">Spacious family living featuring elegant interiors, dining area, private entrances, and maximum comfort.</p>
+                                <button class="video-trigger mt-4 text-[10px] uppercase tracking-widest text-sage border border-sage px-3 py-1.5 rounded-sm hover:bg-sage hover:text-white transition-colors flex items-center gap-2 w-fit" data-video-src="https://raw.githubusercontent.com/Sarup098/nabhasa/main/zo%20nyot.mp4">
+                                    <i class="fa-solid fa-play"></i> Room Tour
+                                </button>
+                            </div>
+                            <div class="text-left md:text-right mt-4 md:mt-0 shrink-0">
+                                <span class="text-2xl font-serif text-stone-900 block">₹6,800</span>
+                                <span class="text-[10px] text-stone-500 uppercase tracking-widest">Per Night</span>
+                            </div>
                         </div>
-                        <div class="text-left md:text-right mt-4 md:mt-0 shrink-0">
-                            <span class="text-2xl font-serif text-stone-900 block">₹4,000</span>
-                            <span class="text-[10px] text-stone-500 uppercase tracking-widest">Per Night</span>
-                        </div>
-                    </div>
 
-                    <!-- Karponang & Phensang -->
-                    <div class="bg-stone-50 p-6 md:p-8 flex flex-col md:flex-row justify-between items-start md:items-center border border-stone-100 rounded-sm hover:shadow-md transition-shadow">
-                        <div>
-                            <h4 class="text-2xl font-serif text-stone-900">Karponang & Phensang <span class="text-xs font-sans text-sage tracking-widest uppercase ml-0 md:ml-3 block md:inline mt-2 md:mt-0 font-semibold">3-Bedded Rooms</span></h4>
-                            <p class="text-sm text-stone-600 font-light mt-2">Cozy and comfortably appointed triple occupancy rooms.</p>
+                        <!-- Yuksum -->
+                        <div class="bg-stone-50 p-6 md:p-8 flex flex-col md:flex-row justify-between items-start md:items-center border border-stone-100 rounded-sm hover:shadow-md transition-all duration-300 hover:border-sage/30">
+                            <div>
+                                <h4 class="text-2xl font-serif text-stone-900">Yuksum <span class="text-xs font-sans text-sage tracking-widest uppercase ml-0 md:ml-3 block md:inline mt-2 md:mt-0 font-semibold">4-Bedded Room</span></h4>
+                                <p class="text-sm text-stone-600 font-light mt-2 leading-relaxed">Front-facing mountain view featuring a private balcony to soak in the surroundings.</p>
+                                <button class="video-trigger mt-4 text-[10px] uppercase tracking-widest text-sage border border-sage px-3 py-1.5 rounded-sm hover:bg-sage hover:text-white transition-colors flex items-center gap-2 w-fit" data-video-src="https://raw.githubusercontent.com/Sarup098/nabhasa/main/zo%20nyot.mp4">
+                                    <i class="fa-solid fa-play"></i> Room Tour
+                                </button>
+                            </div>
+                            <div class="text-left md:text-right mt-4 md:mt-0 shrink-0">
+                                <span class="text-2xl font-serif text-stone-900 block">₹4,800</span>
+                                <span class="text-[10px] text-stone-500 uppercase tracking-widest">Per Night</span>
+                            </div>
                         </div>
-                        <div class="text-left md:text-right mt-4 md:mt-0 shrink-0">
-                            <a href="https://wa.me/919933009711?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20the%20rates%20for%20Karponang%20or%20Phensang." target="_blank" class="text-xs font-semibold uppercase tracking-widest text-sage hover:text-stone-900 transition-colors border-b border-sage hover:border-stone-900 pb-1">Inquire Rates</a>
+
+                        <!-- Dzongri -->
+                        <div class="bg-stone-50 p-6 md:p-8 flex flex-col md:flex-row justify-between items-start md:items-center border border-stone-100 rounded-sm hover:shadow-md transition-all duration-300 hover:border-sage/30">
+                            <div>
+                                <h4 class="text-2xl font-serif text-stone-900">Dzongri <span class="text-xs font-sans text-sage tracking-widest uppercase ml-0 md:ml-3 block md:inline mt-2 md:mt-0 font-semibold">3-Bedded Room</span></h4>
+                                <p class="text-sm text-stone-600 font-light mt-2 leading-relaxed">Beautiful front-facing room offering direct, unobstructed mountain views.</p>
+                                <button class="video-trigger mt-4 text-[10px] uppercase tracking-widest text-sage border border-sage px-3 py-1.5 rounded-sm hover:bg-sage hover:text-white transition-colors flex items-center gap-2 w-fit" data-video-src="https://raw.githubusercontent.com/Sarup098/nabhasa/main/zo%20nyot.mp4">
+                                    <i class="fa-solid fa-play"></i> Room Tour
+                                </button>
+                            </div>
+                            <div class="text-left md:text-right mt-4 md:mt-0 shrink-0">
+                                <span class="text-2xl font-serif text-stone-900 block">₹4,500</span>
+                                <span class="text-[10px] text-stone-500 uppercase tracking-widest">Per Night</span>
+                            </div>
+                        </div>
+
+                        <!-- Karponang -->
+                        <div class="bg-stone-50 p-6 md:p-8 flex flex-col md:flex-row justify-between items-start md:items-center border border-stone-100 rounded-sm hover:shadow-md transition-all duration-300 hover:border-sage/30">
+                            <div>
+                                <h4 class="text-2xl font-serif text-stone-900">Karponang <span class="text-xs font-sans text-sage tracking-widest uppercase ml-0 md:ml-3 block md:inline mt-2 md:mt-0 font-semibold">3-Bedded Room</span></h4>
+                                <p class="text-sm text-stone-600 font-light mt-2 leading-relaxed">Cozy, well-appointed triple occupancy room for a peaceful and comfortable stay.</p>
+                                <button class="video-trigger mt-4 text-[10px] uppercase tracking-widest text-sage border border-sage px-3 py-1.5 rounded-sm hover:bg-sage hover:text-white transition-colors flex items-center gap-2 w-fit" data-video-src="https://raw.githubusercontent.com/Sarup098/nabhasa/main/zo%20nyot.mp4">
+                                    <i class="fa-solid fa-play"></i> Room Tour
+                                </button>
+                            </div>
+                            <div class="text-left md:text-right mt-4 md:mt-0 shrink-0">
+                                <span class="text-2xl font-serif text-stone-900 block">₹3,500</span>
+                                <span class="text-[10px] text-stone-500 uppercase tracking-widest">Per Night</span>
+                            </div>
+                        </div>
+
+                        <!-- Phensang -->
+                        <div class="bg-stone-50 p-6 md:p-8 flex flex-col md:flex-row justify-between items-start md:items-center border border-stone-100 rounded-sm hover:shadow-md transition-all duration-300 hover:border-sage/30">
+                            <div>
+                                <h4 class="text-2xl font-serif text-stone-900">Phensang <span class="text-xs font-sans text-sage tracking-widest uppercase ml-0 md:ml-3 block md:inline mt-2 md:mt-0 font-semibold">3-Bedded Room</span></h4>
+                                <p class="text-sm text-stone-600 font-light mt-2 leading-relaxed">Quiet and comfortably appointed triple occupancy room, perfect for resting after a long day.</p>
+                                <button class="video-trigger mt-4 text-[10px] uppercase tracking-widest text-sage border border-sage px-3 py-1.5 rounded-sm hover:bg-sage hover:text-white transition-colors flex items-center gap-2 w-fit" data-video-src="https://raw.githubusercontent.com/Sarup098/nabhasa/main/zo%20nyot.mp4">
+                                    <i class="fa-solid fa-play"></i> Room Tour
+                                </button>
+                            </div>
+                            <div class="text-left md:text-right mt-4 md:mt-0 shrink-0">
+                                <span class="text-2xl font-serif text-stone-900 block">₹3,000</span>
+                                <span class="text-[10px] text-stone-500 uppercase tracking-widest">Per Night</span>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Policies & Inclusions Box -->
-                <div class="max-w-5xl mx-auto mt-8 bg-stone-900 text-stone-300 p-8 md:p-10 rounded-sm grid grid-cols-1 md:grid-cols-12 gap-8 items-center shadow-lg">
+                <div class="max-w-7xl mx-auto mt-12 bg-stone-900 text-stone-300 p-8 md:p-10 rounded-sm grid grid-cols-1 md:grid-cols-12 gap-8 items-center shadow-lg">
                     <div class="md:col-span-8">
                         <h5 class="text-white font-serif text-2xl mb-5">Inclusions & Policies</h5>
                         <ul class="text-sm font-light space-y-4">
-                            <li class="flex items-start"><i class="fa-solid fa-mug-saucer text-sage mr-3 mt-1 w-4"></i> <span>All room rates are inclusive of <strong>Complimentary Breakfast</strong>.</span></li>
-                            <li class="flex items-start"><i class="fa-solid fa-bed text-sage mr-3 mt-1 w-4"></i> <span>Need more space? An extra mattress is available for <strong>₹850/night</strong>.</span></li>
-                            <li class="flex items-start"><i class="fa-solid fa-shield-check text-sage mr-3 mt-1 w-4"></i> <span><strong>Booking Confirmation:</strong> Bookings are exclusively confirmed upon payment of a <strong>10% advance token amount</strong> (adjustable with your final bill).</span></li>
+                            <li class="flex items-start"><i class="fa-solid fa-mug-saucer text-sage mr-3 mt-1 w-4"></i> <span class="leading-relaxed">All room rates are inclusive of <strong>Complimentary Breakfast</strong>.</span></li>
+                            <li class="flex items-start"><i class="fa-solid fa-utensils text-sage mr-3 mt-1 w-4"></i> <span class="leading-relaxed"><strong>Home-cooked Organic Food:</strong> Available on prior order. (Veg: ₹200/plate, Non-Veg: ₹350/plate).</span></li>
+                            <li class="flex items-start"><i class="fa-solid fa-kitchen-set text-sage mr-3 mt-1 w-4"></i> <span class="leading-relaxed"><strong>Pure Veg Kitchen:</strong> Separate self-cook kitchen with unmixed utensils available for traveling devotees.</span></li>
+                            <li class="flex items-start"><i class="fa-solid fa-bed text-sage mr-3 mt-1 w-4"></i> <span class="leading-relaxed">Need more space? An extra mattress is available for <strong>₹850/night</strong> in all rooms.</span></li>
+                            <li class="flex items-start"><i class="fa-solid fa-shield-check text-sage mr-3 mt-1 w-4"></i> <span class="leading-relaxed"><strong>Booking Confirmation:</strong> Bookings are exclusively confirmed upon payment of a <strong>10% advance token amount</strong> (adjustable with your final bill).</span></li>
                         </ul>
                     </div>
                     <div class="md:col-span-4 text-center md:text-right flex justify-center md:justify-end">
-                         <a href="https://wa.me/919933009711?text=Hello%2C%20I%20would%20like%20to%20book%20a%20stay%20at%20Nabhasa%20Courtyard." target="_blank" class="inline-flex items-center justify-center gap-2 border border-sage text-sage px-8 py-4 uppercase tracking-widest text-xs font-semibold hover:bg-sage hover:text-white transition-all w-full md:w-auto">
-                            <i class="fa-brands fa-whatsapp text-lg"></i> Book Now
+                         <a href="https://wa.me/919933009711?text=Hello%2C%20I%20would%20like%20to%20book%20a%20stay%20at%20Nabhasa%20Courtyard." target="_blank" class="inline-flex items-center justify-center gap-2 border border-sage text-sage px-8 py-4 uppercase tracking-widest text-xs font-semibold hover:bg-sage hover:text-white transition-all w-full md:w-auto rounded-sm group">
+                            <i class="fa-brands fa-whatsapp text-lg group-hover:scale-110 transition-transform"></i> Book Now
                         </a>
                     </div>
                 </div>
@@ -359,41 +366,123 @@
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 reveal">
-                <!-- Doctor on Call -->
-                <div class="bg-white p-6 rounded-sm shadow-sm text-center border border-stone-200/60 hover:-translate-y-1 transition-transform duration-300 flex flex-col justify-center items-center">
-                    <i class="fa-solid fa-user-doctor text-2xl text-sage mb-4"></i>
-                    <h4 class="font-serif text-xl mb-2">24x7 In-House<br>Doctor on Call</h4>
-                    <p class="text-stone-500 text-sm font-light">Peace of mind during your stay with immediate medical assistance available.</p>
+                <!-- Highlighted: Doctor on Call -->
+                <div class="bg-sage/10 p-6 rounded-sm shadow-sm text-center border-2 border-sage hover:-translate-y-1 transition-transform duration-300 flex flex-col justify-center items-center relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 bg-sage text-white text-[9px] uppercase tracking-widest px-3 py-1 font-semibold rounded-bl-sm shadow-sm">Exclusive</div>
+                    <i class="fa-solid fa-user-doctor text-3xl text-sage mb-4 group-hover:scale-110 transition-transform duration-300"></i>
+                    <h4 class="font-serif text-xl mb-2 text-stone-900 font-semibold">24x7 In-House<br>Doctor on Call</h4>
+                    <p class="text-stone-700 text-sm font-medium">Peace of mind during your stay with immediate medical assistance available from our doctor hosts.</p>
                 </div>
+                
+                <!-- Tour & Itinerary Assistance -->
+                <div class="bg-white p-6 rounded-sm shadow-sm text-center border border-stone-200/60 hover:-translate-y-1 transition-transform duration-300 flex flex-col justify-center items-center group">
+                    <i class="fa-solid fa-map-location-dot text-2xl text-sage mb-4 group-hover:scale-110 transition-transform duration-300"></i>
+                    <h4 class="font-serif text-xl mb-2 text-stone-900">Tour & Itinerary<br>Assistance</h4>
+                    <p class="text-stone-500 text-sm font-light">We help manage your itineraries and arrange reliable, trusted transportation for your Sikkim tours.</p>
+                </div>
+
                 <!-- WiFi -->
-                <div class="bg-white p-6 rounded-sm shadow-sm text-center border border-stone-200/60 hover:-translate-y-1 transition-transform duration-300">
-                    <i class="fa-solid fa-wifi text-2xl text-sage mb-4"></i>
-                    <h4 class="font-serif text-xl mb-2">Free High-Speed WiFi</h4>
+                <div class="bg-white p-6 rounded-sm shadow-sm text-center border border-stone-200/60 hover:-translate-y-1 transition-transform duration-300 flex flex-col justify-center items-center group">
+                    <i class="fa-solid fa-wifi text-2xl text-sage mb-4 group-hover:scale-110 transition-transform duration-300"></i>
+                    <h4 class="font-serif text-xl mb-2 text-stone-900">Free High-Speed WiFi</h4>
                     <p class="text-stone-500 text-sm font-light">Stay connected effortlessly from your room, apartment, or the garden.</p>
                 </div>
+
                 <!-- Parking -->
-                <div class="bg-white p-6 rounded-sm shadow-sm text-center border border-stone-200/60 hover:-translate-y-1 transition-transform duration-300">
-                    <i class="fa-solid fa-square-parking text-2xl text-sage mb-4"></i>
-                    <h4 class="font-serif text-xl mb-2">Private Parking</h4>
+                <div class="bg-white p-6 rounded-sm shadow-sm text-center border border-stone-200/60 hover:-translate-y-1 transition-transform duration-300 flex flex-col justify-center items-center group">
+                    <i class="fa-solid fa-square-parking text-2xl text-sage mb-4 group-hover:scale-110 transition-transform duration-300"></i>
+                    <h4 class="font-serif text-xl mb-2 text-stone-900">Private Parking</h4>
                     <p class="text-stone-500 text-sm font-light">Safe, on-site private parking available (₹100/day) and airport shuttle services.</p>
                 </div>
+                
                 <!-- Food/Breakfast -->
-                <div class="bg-white p-6 rounded-sm shadow-sm text-center border border-stone-200/60 hover:-translate-y-1 transition-transform duration-300">
-                    <i class="fa-solid fa-mug-saucer text-2xl text-sage mb-4"></i>
-                    <h4 class="font-serif text-xl mb-2">In-Room Breakfast</h4>
+                <div class="bg-white p-6 rounded-sm shadow-sm text-center border border-stone-200/60 hover:-translate-y-1 transition-transform duration-300 flex flex-col justify-center items-center group">
+                    <i class="fa-solid fa-mug-saucer text-2xl text-sage mb-4 group-hover:scale-110 transition-transform duration-300"></i>
+                    <h4 class="font-serif text-xl mb-2 text-stone-900">In-Room Breakfast</h4>
                     <p class="text-stone-500 text-sm font-light">Enjoy American, Asian, or local specialities served right to your room.</p>
                 </div>
+                
                 <!-- Leisure/Garden -->
-                <div class="bg-white p-6 rounded-sm shadow-sm text-center border border-stone-200/60 hover:-translate-y-1 transition-transform duration-300">
-                    <i class="fa-solid fa-tree text-2xl text-sage mb-4"></i>
-                    <h4 class="font-serif text-xl mb-2">Garden & Fireplace</h4>
+                <div class="bg-white p-6 rounded-sm shadow-sm text-center border border-stone-200/60 hover:-translate-y-1 transition-transform duration-300 flex flex-col justify-center items-center group">
+                    <i class="fa-solid fa-tree text-2xl text-sage mb-4 group-hover:scale-110 transition-transform duration-300"></i>
+                    <h4 class="font-serif text-xl mb-2 text-stone-900">Garden & Fireplace</h4>
                     <p class="text-stone-500 text-sm font-light">Relax on the terrace, enjoy the organic garden, or cozy up by the outdoor fire.</p>
                 </div>
-                <!-- Tour & Itinerary Assistance -->
-                <div class="bg-white p-6 rounded-sm shadow-sm text-center border border-stone-200/60 hover:-translate-y-1 transition-transform duration-300 flex flex-col justify-center items-center">
-                    <i class="fa-solid fa-map-location-dot text-2xl text-sage mb-4"></i>
-                    <h4 class="font-serif text-xl mb-2">Tour & Itinerary<br>Assistance</h4>
-                    <p class="text-stone-500 text-sm font-light">We help manage your itineraries and arrange reliable, trusted transportation for your Sikkim tours.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery / Moments Section -->
+    <section id="gallery" class="py-32 bg-stone-900 border-t border-stone-800 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="text-center mb-24 reveal">
+                <span class="text-sage text-xs font-semibold tracking-[0.2em] uppercase mb-4 block">Visual Journey</span>
+                <h2 class="text-5xl font-serif text-stone-50">Glimpses of Nabhasa</h2>
+                <div class="hairline w-16 mx-auto mt-8 bg-stone-50"></div>
+            </div>
+        </div>
+            
+        <!-- Infinite Scrolling Rail with ALL Images -->
+        <div class="marquee-container reveal">
+            <!-- Track 1 -->
+            <div class="marquee-track">
+                <div class="w-[300px] md:w-[400px] shrink-0 img-zoom-container aspect-[4/3] group rounded-sm overflow-hidden">
+                    <img src="https://raw.githubusercontent.com/Sarup098/nabhasa/main/1.jpg" alt="Property Exterior" class="w-full h-full object-cover img-zoom opacity-80 group-hover:opacity-100 transition-opacity duration-500">
+                </div>
+                <div class="w-[300px] md:w-[400px] shrink-0 img-zoom-container aspect-[4/3] group rounded-sm overflow-hidden">
+                    <img src="https://raw.githubusercontent.com/Sarup098/nabhasa/main/balcony.jpg" alt="Balcony View" class="w-full h-full object-cover img-zoom opacity-80 group-hover:opacity-100 transition-opacity duration-500">
+                </div>
+                <div class="w-[300px] md:w-[400px] shrink-0 img-zoom-container aspect-[4/3] group rounded-sm overflow-hidden">
+                    <img src="https://raw.githubusercontent.com/Sarup098/nabhasa/main/bed.jpg" alt="Comfortable Bed" class="w-full h-full object-cover img-zoom opacity-80 group-hover:opacity-100 transition-opacity duration-500">
+                </div>
+                <div class="w-[300px] md:w-[400px] shrink-0 img-zoom-container aspect-[4/3] group rounded-sm overflow-hidden">
+                    <img src="https://raw.githubusercontent.com/Sarup098/nabhasa/main/garden.jpg" alt="Lush Garden" class="w-full h-full object-cover img-zoom opacity-80 group-hover:opacity-100 transition-opacity duration-500">
+                </div>
+                <div class="w-[300px] md:w-[400px] shrink-0 img-zoom-container aspect-[4/3] group rounded-sm overflow-hidden">
+                    <img src="https://raw.githubusercontent.com/Sarup098/nabhasa/main/parking.jpg" alt="Private Parking" class="w-full h-full object-cover img-zoom opacity-80 group-hover:opacity-100 transition-opacity duration-500">
+                </div>
+                <div class="w-[300px] md:w-[400px] shrink-0 img-zoom-container aspect-[4/3] group rounded-sm overflow-hidden">
+                    <img src="https://raw.githubusercontent.com/Sarup098/nabhasa/main/stair.jpg" alt="Staircase" class="w-full h-full object-cover img-zoom opacity-80 group-hover:opacity-100 transition-opacity duration-500">
+                </div>
+                <div class="w-[300px] md:w-[400px] shrink-0 img-zoom-container aspect-[4/3] group rounded-sm overflow-hidden">
+                    <img src="https://raw.githubusercontent.com/Sarup098/nabhasa/main/thali.jpg" alt="Delicious Thali" class="w-full h-full object-cover img-zoom opacity-80 group-hover:opacity-100 transition-opacity duration-500">
+                </div>
+                <div class="w-[300px] md:w-[400px] shrink-0 img-zoom-container aspect-[4/3] group rounded-sm overflow-hidden">
+                    <img src="https://raw.githubusercontent.com/Sarup098/nabhasa/main/view.jpg" alt="Mountain View" class="w-full h-full object-cover img-zoom opacity-80 group-hover:opacity-100 transition-opacity duration-500">
+                </div>
+                <div class="w-[300px] md:w-[400px] shrink-0 img-zoom-container aspect-[4/3] group rounded-sm overflow-hidden">
+                    <img src="https://raw.githubusercontent.com/Sarup098/nabhasa/main/washroom.jpg" alt="Clean Washroom" class="w-full h-full object-cover img-zoom opacity-80 group-hover:opacity-100 transition-opacity duration-500">
+                </div>
+            </div>
+            
+            <!-- Track 2 (Duplicate for seamless loop) -->
+            <div class="marquee-track" aria-hidden="true">
+                <div class="w-[300px] md:w-[400px] shrink-0 img-zoom-container aspect-[4/3] group rounded-sm overflow-hidden">
+                    <img src="https://raw.githubusercontent.com/Sarup098/nabhasa/main/1.jpg" alt="Property Exterior" class="w-full h-full object-cover img-zoom opacity-80 group-hover:opacity-100 transition-opacity duration-500">
+                </div>
+                <div class="w-[300px] md:w-[400px] shrink-0 img-zoom-container aspect-[4/3] group rounded-sm overflow-hidden">
+                    <img src="https://raw.githubusercontent.com/Sarup098/nabhasa/main/balcony.jpg" alt="Balcony View" class="w-full h-full object-cover img-zoom opacity-80 group-hover:opacity-100 transition-opacity duration-500">
+                </div>
+                <div class="w-[300px] md:w-[400px] shrink-0 img-zoom-container aspect-[4/3] group rounded-sm overflow-hidden">
+                    <img src="https://raw.githubusercontent.com/Sarup098/nabhasa/main/bed.jpg" alt="Comfortable Bed" class="w-full h-full object-cover img-zoom opacity-80 group-hover:opacity-100 transition-opacity duration-500">
+                </div>
+                <div class="w-[300px] md:w-[400px] shrink-0 img-zoom-container aspect-[4/3] group rounded-sm overflow-hidden">
+                    <img src="https://raw.githubusercontent.com/Sarup098/nabhasa/main/garden.jpg" alt="Lush Garden" class="w-full h-full object-cover img-zoom opacity-80 group-hover:opacity-100 transition-opacity duration-500">
+                </div>
+                <div class="w-[300px] md:w-[400px] shrink-0 img-zoom-container aspect-[4/3] group rounded-sm overflow-hidden">
+                    <img src="https://raw.githubusercontent.com/Sarup098/nabhasa/main/parking.jpg" alt="Private Parking" class="w-full h-full object-cover img-zoom opacity-80 group-hover:opacity-100 transition-opacity duration-500">
+                </div>
+                <div class="w-[300px] md:w-[400px] shrink-0 img-zoom-container aspect-[4/3] group rounded-sm overflow-hidden">
+                    <img src="https://raw.githubusercontent.com/Sarup098/nabhasa/main/stair.jpg" alt="Staircase" class="w-full h-full object-cover img-zoom opacity-80 group-hover:opacity-100 transition-opacity duration-500">
+                </div>
+                <div class="w-[300px] md:w-[400px] shrink-0 img-zoom-container aspect-[4/3] group rounded-sm overflow-hidden">
+                    <img src="https://raw.githubusercontent.com/Sarup098/nabhasa/main/thali.jpg" alt="Delicious Thali" class="w-full h-full object-cover img-zoom opacity-80 group-hover:opacity-100 transition-opacity duration-500">
+                </div>
+                <div class="w-[300px] md:w-[400px] shrink-0 img-zoom-container aspect-[4/3] group rounded-sm overflow-hidden">
+                    <img src="https://raw.githubusercontent.com/Sarup098/nabhasa/main/view.jpg" alt="Mountain View" class="w-full h-full object-cover img-zoom opacity-80 group-hover:opacity-100 transition-opacity duration-500">
+                </div>
+                <div class="w-[300px] md:w-[400px] shrink-0 img-zoom-container aspect-[4/3] group rounded-sm overflow-hidden">
+                    <img src="https://raw.githubusercontent.com/Sarup098/nabhasa/main/washroom.jpg" alt="Clean Washroom" class="w-full h-full object-cover img-zoom opacity-80 group-hover:opacity-100 transition-opacity duration-500">
                 </div>
             </div>
         </div>
@@ -404,7 +493,7 @@
         <div class="max-w-7xl mx-auto reveal">
             <div class="text-center mb-16">
                 <span class="text-sage text-xs font-semibold tracking-[0.2em] uppercase mb-4 block">Memories</span>
-                <h2 class="text-4xl font-serif text-stone-900 mb-6">Photos from Guests</h2>
+                <h2 class="text-4xl font-serif text-stone-900 mb-6">Photos of our Guests</h2>
                 <div class="hairline w-16 mx-auto bg-stone-900"></div>
                 <p class="mt-8 text-stone-500 font-light text-sm">We will upload photos shared by our lovely guests shortly. Check back soon!</p>
             </div>
@@ -432,7 +521,7 @@
         <div class="max-w-7xl mx-auto reveal">
             <div class="text-center mb-16">
                 <span class="text-sage text-xs font-semibold tracking-[0.2em] uppercase mb-4 block">Guest Impressions</span>
-                <h2 class="text-4xl font-serif text-stone-900 mb-6">Rated 9.7 Exceptional</h2>
+                <h2 class="text-4xl font-serif text-stone-900 mb-6">Loved by Guests on Google & Booking.com</h2>
                 <div class="hairline w-16 mx-auto bg-stone-900"></div>
             </div>
             
@@ -474,9 +563,12 @@
                 </div>
             </div>
             
-            <div class="text-center mt-12">
-                <a href="https://www.booking.com/Share-jJWR1m" target="_blank" class="inline-flex items-center gap-2 border border-stone-300 px-6 py-3 text-[10px] uppercase tracking-widest font-semibold hover:border-stone-900 hover:bg-stone-900 hover:text-white transition-all">
-                    Read all 13 reviews on Booking.com <i class="fa-solid fa-arrow-right"></i>
+            <div class="text-center mt-12 flex flex-col md:flex-row justify-center items-center gap-4">
+                <a href="https://www.booking.com/Share-jJWR1m" target="_blank" class="inline-flex items-center gap-2 border border-stone-300 px-6 py-3 text-[10px] uppercase tracking-widest font-semibold hover:border-stone-900 hover:bg-stone-900 hover:text-white transition-all w-full md:w-auto justify-center rounded-sm">
+                    Read reviews on Booking.com <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <a href="https://www.google.com/search?q=Nabhasa+Courtyard+Gangtok" target="_blank" class="inline-flex items-center gap-2 border border-stone-300 px-6 py-3 text-[10px] uppercase tracking-widest font-semibold hover:border-sage hover:bg-sage hover:text-white transition-all w-full md:w-auto justify-center rounded-sm">
+                    <i class="fa-brands fa-google"></i> Read reviews on Google
                 </a>
             </div>
         </div>
@@ -488,8 +580,8 @@
             
             <!-- Brand -->
             <div class="md:col-span-4">
-                <div class="flex items-center gap-3 mb-4">
-                    <div class="bg-white p-2 rounded-full shadow-sm inline-block cursor-pointer easter-egg-trigger" id="footer-logo-btn">
+                <div class="flex items-center gap-3 mb-4 group cursor-pointer w-max easter-egg-trigger" id="footer-logo-btn" title="Click 3 times for a surprise!">
+                    <div class="bg-white p-2 rounded-full shadow-sm inline-block transition-transform duration-300 group-hover:scale-105">
                         <img src="https://raw.githubusercontent.com/Sarup098/nabhasa/main/Nabhasa_Logo.png" alt="Nabhasa Logo" class="h-10 w-10 object-contain">
                     </div>
                     <div>
@@ -497,7 +589,7 @@
                         <h3 class="text-[10px] font-sans tracking-[0.3em] uppercase text-sage font-semibold">Heavenly Stays</h3>
                     </div>
                 </div>
-                <p class="font-light text-sm leading-relaxed mb-8 max-w-sm">
+                <p class="font-light text-sm leading-relaxed mb-8 max-w-sm mt-4">
                     A boutique homestay in the hills of Gangtok offering mountain-view rooms and family apartments. Hosted by a doctor couple.
                 </p>
                 <div class="flex space-x-6 text-stone-50">
@@ -514,7 +606,12 @@
                     <li><i class="fa-regular fa-envelope text-sage mr-2 w-4"></i> <a href="mailto:aryanavasa@gmail.com" class="hover:text-white transition-colors">aryanavasa@gmail.com</a></li>
                     <li class="flex items-start mt-4">
                         <i class="fa-solid fa-location-dot text-sage mr-3 mt-1 w-4"></i> 
-                        <span class="leading-relaxed">Near Banjhakri Falls (650m)<br>Adjacent to Luing Garden Restaurant<br>Gangtok, Sikkim</span>
+                        <div class="flex flex-col">
+                            <span class="leading-relaxed">Near Banjhakri Falls (650m)<br>Adjacent to Luing Garden Restaurant<br>Gangtok, Sikkim</span>
+                            <a href="https://maps.google.com/?q=27.3503,88.5997" target="_blank" class="inline-flex items-center justify-center gap-2 mt-3 text-[10px] uppercase tracking-widest font-semibold text-sage hover:text-white transition-colors bg-stone-800 hover:bg-sage px-3 py-2 rounded-sm border border-stone-700 w-fit">
+                                <i class="fa-solid fa-map-location-dot"></i> View on Maps
+                            </a>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -568,6 +665,19 @@
                     <i class="fa-solid fa-share-nodes"></i> Share
                 </a>
             </div>
+        </div>
+    </div>
+
+    <!-- Video Lightbox Modal -->
+    <div id="video-modal" class="fixed inset-0 z-[100] bg-stone-900/95 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-500 backdrop-blur-sm">
+        <button id="close-video" class="absolute top-6 right-6 text-white hover:text-sage transition-colors p-2 z-10">
+            <i class="fa-solid fa-times text-3xl"></i>
+        </button>
+        <div class="w-full max-w-5xl p-4 md:p-8 outline-none relative">
+            <video id="room-video" class="w-full h-auto max-h-[85vh] rounded-sm shadow-2xl outline-none" controls playsinline preload="none">
+                <source src="" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </div>
     </div>
 
@@ -676,7 +786,43 @@
             const revealElements = document.querySelectorAll('.reveal:not(.active)');
             revealElements.forEach(el => observer.observe(el));
 
-            // 4. Easter Egg: Business Card Generator
+            // 4. Video Modal Logic
+            const videoModal = document.getElementById('video-modal');
+            const roomVideo = document.getElementById('room-video');
+            const closeVideoBtn = document.getElementById('close-video');
+            const videoTriggers = document.querySelectorAll('.video-trigger');
+
+            videoTriggers.forEach(trigger => {
+                trigger.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const videoSrc = trigger.getAttribute('data-video-src');
+                    roomVideo.src = videoSrc;
+                    videoModal.classList.remove('opacity-0', 'pointer-events-none');
+                    videoModal.classList.add('opacity-100', 'pointer-events-auto');
+                    // Small delay to ensure the modal is visible before playing
+                    setTimeout(() => {
+                        roomVideo.play().catch(e => console.log("Autoplay prevented:", e));
+                    }, 300);
+                });
+            });
+
+            const closeVideoModal = () => {
+                videoModal.classList.add('opacity-0', 'pointer-events-none');
+                videoModal.classList.remove('opacity-100', 'pointer-events-auto');
+                setTimeout(() => {
+                    roomVideo.pause();
+                    roomVideo.src = ''; // Clear source to stop downloading
+                }, 500); // Wait for fade out transition
+            };
+
+            closeVideoBtn.addEventListener('click', closeVideoModal);
+            
+            // Close when clicking outside the video
+            videoModal.addEventListener('click', (e) => {
+                if (e.target === videoModal) closeVideoModal();
+            });
+
+            // 5. Easter Egg: Business Card Generator
             const footerLogoBtn = document.getElementById('footer-logo-btn');
             let clickCount = 0;
             let clickTimer = null;
@@ -696,9 +842,9 @@
             });
 
             async function generateVisitingCardsPDF() {
-                // Temporarily show a loading state on the button
+                // Temporarily show a loading state on the button content wrapper
                 const originalLogoHTML = footerLogoBtn.innerHTML;
-                footerLogoBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin text-stone-900 text-xl w-10 h-10 flex items-center justify-center"></i>';
+                footerLogoBtn.innerHTML = '<div class="w-10 h-10 flex items-center justify-center"><i class="fa-solid fa-spinner fa-spin text-white text-xl"></i></div><div><h2 class="font-serif text-2xl text-stone-50 tracking-widest uppercase mb-1">Building...</h2><h3 class="text-[10px] font-sans tracking-[0.3em] uppercase text-sage font-semibold">Please wait</h3></div>';
                 
                 try {
                     const { jsPDF } = window.jspdf;
