@@ -178,6 +178,7 @@
         <div class="absolute inset-0 z-0 bg-stone-900">
             <div class="relative w-full h-full opacity-60">
                 <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover">
+                    <!-- Updated to use .mp4 extension for proper video fetching -->
                     <source src="https://raw.githubusercontent.com/Sarup098/nabhasa/main/hero%20section%20.mp4" type="video/mp4">
                 </video>
             </div>
@@ -207,6 +208,7 @@
     <!-- Philosophy / Intro -->
     <section id="about" class="py-24 md:py-32 px-6 md:px-12 bg-stone-50 text-stone-900 text-center">
         <div class="max-w-4xl mx-auto reveal">
+            <!-- Pet Friendly Highlight Banner -->
             <div class="inline-flex items-center gap-2 bg-sage/15 text-sage border border-sage/30 px-4 py-1.5 rounded-sm text-[10px] font-semibold tracking-[0.2em] uppercase mb-8">
                 <i class="fa-solid fa-paw"></i> Pet Friendly Property
             </div>
@@ -280,7 +282,7 @@
                             <div>
                                 <h4 class="text-2xl font-serif text-stone-900">Yuksum <span class="text-xs font-sans text-sage tracking-widest uppercase ml-0 md:ml-3 block md:inline mt-2 md:mt-0 font-semibold">4-Bedded Room</span></h4>
                                 <p class="text-sm text-stone-600 font-light mt-2 leading-relaxed">Front-facing mountain view featuring a private balcony to soak in the surroundings.</p>
-                                <button class="video-trigger mt-4 text-[10px] uppercase tracking-widest text-sage border border-sage px-3 py-1.5 rounded-sm hover:bg-sage hover:text-white transition-colors flex items-center gap-2 w-fit" data-video-src="https://raw.githubusercontent.com/Sarup098/nabhasa/main/zo%20nyot.mp4">
+                                <button class="mt-4 text-[10px] uppercase tracking-widest text-stone-400 border border-stone-300 px-3 py-1.5 rounded-sm flex items-center gap-2 w-fit cursor-not-allowed" disabled title="Room is ready for booking! Tour video is currently in development.">
                                     <i class="fa-solid fa-play"></i> Room Tour
                                 </button>
                             </div>
@@ -295,7 +297,7 @@
                             <div>
                                 <h4 class="text-2xl font-serif text-stone-900">Dzongri <span class="text-xs font-sans text-sage tracking-widest uppercase ml-0 md:ml-3 block md:inline mt-2 md:mt-0 font-semibold">4-Bedded Room</span></h4>
                                 <p class="text-sm text-stone-600 font-light mt-2 leading-relaxed">Beautiful front-facing room offering direct, unobstructed mountain views.</p>
-                                <button class="video-trigger mt-4 text-[10px] uppercase tracking-widest text-sage border border-sage px-3 py-1.5 rounded-sm hover:bg-sage hover:text-white transition-colors flex items-center gap-2 w-fit" data-video-src="https://raw.githubusercontent.com/Sarup098/nabhasa/main/zo%20nyot.mp4">
+                                <button class="mt-4 text-[10px] uppercase tracking-widest text-stone-400 border border-stone-300 px-3 py-1.5 rounded-sm flex items-center gap-2 w-fit cursor-not-allowed" disabled title="Room is ready for booking! Tour video is currently in development.">
                                     <i class="fa-solid fa-play"></i> Room Tour
                                 </button>
                             </div>
@@ -310,7 +312,7 @@
                             <div>
                                 <h4 class="text-2xl font-serif text-stone-900">Karponang <span class="text-xs font-sans text-sage tracking-widest uppercase ml-0 md:ml-3 block md:inline mt-2 md:mt-0 font-semibold">3-Bedded Room</span></h4>
                                 <p class="text-sm text-stone-600 font-light mt-2 leading-relaxed">Cozy, well-appointed triple occupancy room for a peaceful and comfortable stay.</p>
-                                <button class="video-trigger mt-4 text-[10px] uppercase tracking-widest text-sage border border-sage px-3 py-1.5 rounded-sm hover:bg-sage hover:text-white transition-colors flex items-center gap-2 w-fit" data-video-src="https://raw.githubusercontent.com/Sarup098/nabhasa/main/zo%20nyot.mp4">
+                                <button class="mt-4 text-[10px] uppercase tracking-widest text-stone-400 border border-stone-300 px-3 py-1.5 rounded-sm flex items-center gap-2 w-fit cursor-not-allowed" disabled title="Room is ready for booking! Tour video is currently in development.">
                                     <i class="fa-solid fa-play"></i> Room Tour
                                 </button>
                             </div>
@@ -325,8 +327,23 @@
                             <div>
                                 <h4 class="text-2xl font-serif text-stone-900">Phensang <span class="text-xs font-sans text-sage tracking-widest uppercase ml-0 md:ml-3 block md:inline mt-2 md:mt-0 font-semibold">3-Bedded Room</span></h4>
                                 <p class="text-sm text-stone-600 font-light mt-2 leading-relaxed">Quiet and comfortably appointed triple occupancy room, perfect for resting after a long day.</p>
-                                <button class="video-trigger mt-4 text-[10px] uppercase tracking-widest text-sage border border-sage px-3 py-1.5 rounded-sm hover:bg-sage hover:text-white transition-colors flex items-center gap-2 w-fit" data-video-src="https://raw.githubusercontent.com/Sarup098/nabhasa/main/zo%20nyot.mp4">
+                                <button class="mt-4 text-[10px] uppercase tracking-widest text-stone-400 border border-stone-300 px-3 py-1.5 rounded-sm flex items-center gap-2 w-fit cursor-not-allowed" disabled title="Room is ready for booking! Tour video is currently in development.">
                                     <i class="fa-solid fa-play"></i> Room Tour
+                                </button>
+                            </div>
+                            <div class="text-left md:text-right mt-4 md:mt-0 shrink-0">
+                                <span class="text-2xl font-serif text-stone-900 block">₹3,500</span>
+                                <span class="text-[10px] text-stone-500 uppercase tracking-widest">Per Night</span>
+                            </div>
+                        </div>
+
+                        <!-- Phensang -->
+                        <div class="bg-stone-50 p-6 md:p-8 flex flex-col md:flex-row justify-between items-start md:items-center border border-stone-100 rounded-sm hover:shadow-md transition-all duration-300 hover:border-sage/30">
+                            <div>
+                                <h4 class="text-2xl font-serif text-stone-900">Phensang <span class="text-xs font-sans text-sage tracking-widest uppercase ml-0 md:ml-3 block md:inline mt-2 md:mt-0 font-semibold">3-Bedded Room</span></h4>
+                                <p class="text-sm text-stone-600 font-light mt-2 leading-relaxed">Quiet and comfortably appointed triple occupancy room, perfect for resting after a long day.</p>
+                                <button class="mt-4 text-[10px] uppercase tracking-widest text-stone-500 border border-stone-300 px-3 py-1.5 rounded-sm flex items-center gap-2 w-fit cursor-not-allowed bg-stone-100" disabled title="Room is ready for booking!">
+                                    <i class="fa-solid fa-video-slash"></i> Room Ready • Tour in Development
                                 </button>
                             </div>
                             <div class="text-left md:text-right mt-4 md:mt-0 shrink-0">
@@ -338,26 +355,27 @@
                 </div>
 
                 <!-- Policies & Inclusions Box -->
-                <div class="max-w-7xl mx-auto mt-12 bg-stone-900 text-stone-300 p-8 md:p-10 rounded-sm flex flex-col gap-6 shadow-lg">
-                    <div>
-                        <h5 class="text-white font-serif text-2xl mb-5">Inclusions & Policies</h5>
-                        <ul class="text-sm font-light space-y-4">
-                            <li class="flex items-start"><i class="fa-solid fa-mug-saucer text-sage mr-3 mt-1 w-4"></i> <span class="leading-relaxed">All room rates are inclusive of <strong>Complimentary Breakfast</strong>.</span></li>
-                            <li class="flex items-start"><i class="fa-solid fa-utensils text-sage mr-3 mt-1 w-4"></i> <span class="leading-relaxed"><strong>Home-cooked Organic Food:</strong> Available on prior order. (Veg: ₹200/plate, Non-Veg: ₹350/plate).</span></li>
-                            <li class="flex items-start"><i class="fa-solid fa-bed text-sage mr-3 mt-1 w-4"></i> <span class="leading-relaxed">Need more space? An extra mattress is available for <strong>₹850/night</strong> in all rooms.</span></li>
-                            <li class="flex items-start"><i class="fa-solid fa-shield-check text-sage mr-3 mt-1 w-4"></i> <span class="leading-relaxed"><strong>Booking Confirmation:</strong> Bookings are exclusively confirmed upon payment of a <strong>10% advance token amount</strong> (adjustable with your final bill).</span></li>
-                            
-                            <!-- Highlighted Pure Veg Kitchen -->
-                            <li class="flex items-start bg-sage/20 p-3 rounded-sm border border-sage/30 mt-6">
-                                <i class="fa-solid fa-kitchen-set text-sage mr-3 mt-1 w-4"></i> 
-                                <span class="leading-relaxed text-white">
-                                    <strong>Pure Veg Kitchen Available:</strong> Separate self-cook kitchen with unmixed utensils readily available for traveling devotees.
-                                </span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="mt-4">
-                         <a href="https://wa.me/919933009711?text=Hello%2C%20I%20would%20like%20to%20book%20a%20stay%20at%20Nabhasa%20Courtyard." target="_blank" class="inline-flex items-center justify-center gap-2 border border-sage text-sage px-8 py-4 uppercase tracking-widest text-xs font-semibold hover:bg-sage hover:text-white transition-all w-full md:w-auto rounded-sm group">
+                <div class="max-w-7xl mx-auto mt-12 bg-stone-900 text-stone-300 p-8 md:p-10 rounded-sm flex flex-col shadow-lg">
+                    <h5 class="text-white font-serif text-2xl mb-6">Inclusions & Policies</h5>
+                    
+                    <ul class="text-sm font-light space-y-4 mb-8">
+                        <li class="flex items-start"><i class="fa-solid fa-mug-saucer text-sage mr-3 mt-1 w-4"></i> <span class="leading-relaxed">All room rates are inclusive of <strong>Complimentary Breakfast</strong>.</span></li>
+                        <li class="flex items-start"><i class="fa-solid fa-utensils text-sage mr-3 mt-1 w-4"></i> <span class="leading-relaxed"><strong>Home-cooked Organic Food:</strong> Available on prior order. (Veg: ₹200/plate, Non-Veg: ₹350/plate).</span></li>
+                        <li class="flex items-start"><i class="fa-solid fa-bed text-sage mr-3 mt-1 w-4"></i> <span class="leading-relaxed">Need more space? An extra mattress is available for <strong>₹850/night</strong> in all rooms.</span></li>
+                        <li class="flex items-start"><i class="fa-solid fa-shield-check text-sage mr-3 mt-1 w-4"></i> <span class="leading-relaxed"><strong>Booking Confirmation:</strong> Bookings are exclusively confirmed upon payment of a <strong>10% advance token amount</strong> (adjustable with your final bill).</span></li>
+                    </ul>
+
+                    <!-- Action Area: Pure Veg Highlight & Book Now -->
+                    <div class="border-t border-stone-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
+                        <!-- Highlighted Pure Veg Kitchen -->
+                        <div class="flex items-start bg-sage/20 p-4 rounded-sm border border-sage/30 w-full md:w-auto flex-1 max-w-2xl">
+                            <i class="fa-solid fa-kitchen-set text-sage mr-3 mt-1 w-4"></i> 
+                            <span class="leading-relaxed text-white text-sm">
+                                <strong>Pure Veg Kitchen Available:</strong> Separate self-cook kitchen with unmixed utensils readily available for traveling devotees.
+                            </span>
+                        </div>
+                        
+                        <a href="https://wa.me/919933009711?text=Hello%2C%20I%20would%20like%20to%20book%20a%20stay%20at%20Nabhasa%20Courtyard." target="_blank" class="inline-flex items-center justify-center gap-2 border border-sage text-sage px-8 py-4 uppercase tracking-widest text-xs font-semibold hover:bg-sage hover:text-white transition-all w-full md:w-auto rounded-sm group shrink-0">
                             <i class="fa-brands fa-whatsapp text-lg group-hover:scale-110 transition-transform"></i> Book Now
                         </a>
                     </div>
